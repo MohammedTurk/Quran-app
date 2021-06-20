@@ -9,7 +9,7 @@ function FortItem({ match }) {
   const { id } = match.params;
   useEffect(async () => {
     const { data: ItemFort } = await axios.get(
-      `http://www.mp3quran.net/api/husn/ar/${id}.json`
+      `https://www.mp3quran.net/api/husn/ar/${id}.json`
     );
     setItemFort(ItemFort[Object.keys(ItemFort)]);
     setFortTitle([Object.keys(ItemFort)]);

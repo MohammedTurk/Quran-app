@@ -24,7 +24,7 @@ function SurraTafseerData({ match }) {
   };
   const handleDetails = async (aya, surra) => {
     const { data } = await axios.get(
-      `http://api.quran-tafseer.com/tafseer/1/${surra.number}/${aya.numberInSurah}`
+      `https://cors-anywhere.herokuapp.com/http://api.quran-tafseer.com/tafseer/1/${surra.number}/${aya.numberInSurah}`
     );
     SetDetailsTafseer(data);
   };

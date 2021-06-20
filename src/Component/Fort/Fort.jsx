@@ -15,7 +15,7 @@ function Fort(props) {
   };
   useEffect(async () => {
     const { data } = await axios.get(
-      "http://mp3quran.net/api/husn/ar/husn_ar.json?fbclid=IwAR2vi2p2UnlgV3jATGyX7-NxPB0_CW8MzDFq5-nJpQJ5r9jPv1Z69gydB54"
+      "https://mp3quran.net/api/husn/ar/husn_ar.json?fbclid=IwAR2vi2p2UnlgV3jATGyX7-NxPB0_CW8MzDFq5-nJpQJ5r9jPv1Z69gydB54"
     );
     setApi(data.العربية);
   });

@@ -1,0 +1,98 @@
+.skeleton-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.skeleton-head {
+  width: 70%;
+  height: 15px;
+  margin: 15px 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 7px;
+}
+.skeleton-name {
+  width: 35%;
+  height: 15px;
+  margin: 15px 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 7px;
+}
+.skeleton-text {
+  width: 60%;
+  height: 15px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 7px;
+}
+.skeleton-data {
+  width: 100%;
+  height: 15px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.skeleton-wrapper-readers {
+  margin: 5px;
+  padding: 30px;
+  width: 100%;
+  /* overflow: hidden; */
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+.shimmer-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: skewX(-20deg);
+}
+.shimmer {
+  width: 100%;
+  height: 100%;
+  animation: skeleton 1s infinite;
+}
+
+@keyframes skeleton {
+  0% {
+    transform: translateX(-190%);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateX(-90%);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(150%);
+    opacity: 0.2;
+  }
+}
+.skeleton-container-surra {
+  padding: 10px;
+}
+.skeleton-wrapper-surras,
+.skeleton-wrapper-fort {
+  margin: 4px;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+.skeleton-container-surra,
+.skeleton-container-fort {
+  /* padding: 30px; */
+  border-radius: 15px;
+}
+.skeleton-wrapper-fort {
+  border-radius: 10px;
+  padding: 7px;
+}
+.skeleton-wrapper-tafseer {
+  border-radius: 10px;
+  padding: 7px;
+  margin: 5px;
+}

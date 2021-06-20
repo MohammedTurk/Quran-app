@@ -13,10 +13,11 @@ function NavForm(props) {
         </span>
         <Input
           type="email"
-          className="form-control"
+          className="form-control lll"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           placeholder="ابحث"
+          disabled
         />
       </div>
     </div>

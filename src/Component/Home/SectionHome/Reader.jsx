@@ -6,7 +6,7 @@ import heart from "../../../heart.svg";
 import heart2 from "../../../heart2.svg";
 
 import "../Home.css";
-function Reader({ item, count, readerInfo }) {
+function Reader({ item, count }) {
   const TheContext = useContext(UserContext);
   return (
     <ReaderItem id="reader-item">
@@ -17,10 +17,7 @@ function Reader({ item, count, readerInfo }) {
         <span className="num-reader">{count}</span>
       </div>
       <Link
-        onClick={() => {
-          TheContext.readerInfo(item);
-        }}
-        to={item.id}
+        to={`/reader${item.id}`}
         className="info-reader align-items-end flex-column text-right"
       >
         <h4>{item.name}</h4>

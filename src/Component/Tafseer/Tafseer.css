@@ -1,0 +1,144 @@
+.tafseer-div,
+.skeleton-tafseer-data {
+  padding: 10px;
+  border-radius: 15px;
+  margin-top: 21px;
+}
+.tafseer-element {
+  border-radius: 10px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.075);
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.tafseer-element:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.tafseer-element a {
+  padding: 15px;
+  text-decoration: none !important;
+}
+.tafseer-element span {
+  color: #00b06e;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  /* font-weight: 800; */
+}
+.aya-div {
+  font-size: 18px;
+  text-align: right;
+  margin-top: 8px;
+  padding: 5px !important;
+  font-weight: 500;
+  word-spacing: 3px;
+}
+.aya-span {
+  padding: 7px;
+  margin-bottom: 5px;
+  display: inline-block;
+  transition: all 0.3s;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.aya-span:hover {
+  background-color: #00b06e;
+  color: #fff;
+}
+.tafseer-Interface {
+  background-color: rgba(0, 0, 0, 0.425);
+  width: 100%;
+  position: relative;
+  position: fixed;
+  inset: 0;
+  z-index: 1600;
+}
+.tafseer-content {
+  position: fixed;
+  left: 10%;
+  top: 25%;
+  background-color: #fff;
+  width: 80%;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 1601;
+  text-align: right;
+  font-size: 17px;
+  overflow: auto;
+  max-height: 400px;
+}
+.tafseer-content h3 {
+  font-size: 19px;
+  color: #00b06e;
+  border-right: 3px solid #00b06e;
+  padding-right: 5px;
+}
+@media (max-width: 768px) {
+  .tafseer-content h3 {
+    font-size: 17px;
+  }
+  .tafseer-content {
+    font-size: 15px;
+  }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+  .tafseer-content h3 {
+    font-size: 18px;
+  }
+  .tafseer-content {
+    font-size: 16px;
+  }
+}
+
+.tafseer-content::-webkit-scrollbar {
+  width: 7px;
+  border-radius: 15px 0 0 15px;
+}
+
+.tafseer-content::-webkit-scrollbar-thumb {
+  border-radius: 15px 0 0 15px;
+  background-color: #00b06e;
+}
+.search-aya input {
+  border-radius: 15px;
+  border: none;
+  transition: all 0.4s;
+  padding: 6px;
+  width: 250px;
+  outline: none;
+  box-shadow: 0px 1px 1px 1px rgba(17, 102, 50, 0.13);
+  transition: all 0.4s;
+}
+
+.search-aya input:focus {
+  box-shadow: 0px 4px 4px 4px rgba(17, 102, 50, 0.13);
+}
+.surra-Tafseer-name {
+  color: #00b06e;
+  border-right: 4px solid #00b06e;
+  padding-right: 7px;
+}
+.title {
+  border-right: 3px solid #00b06e;
+  padding-right: 5px;
+  padding: 3px;
+}
+.title h2 {
+  font-weight: bolder;
+}
+@media (max-width: 708px) {
+  .tafseer-head .title h2,
+  .surra-Tafseer-name h3 {
+    font-size: 20px;
+  }
+  .search-aya input {
+    padding: 4px;
+  }
+}
+.tafseer-search input {
+  box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 20%) !important;
+  width: 100%;
+  outline: none;
+}

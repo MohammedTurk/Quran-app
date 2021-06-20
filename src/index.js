@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
@@ -8,6 +8,8 @@ import "bootstrap/dist/js/bootstrap";
 import "font-awesome/css/font-awesome.css";
 import { ProvideContext } from "./Component/Context";
 import { BrowserRouter } from "react-router-dom";
+import LoadingScreen from "./Component/LoadingScreen/LoadingScreen";
+
 ReactDOM.render(
   <React.StrictMode>
     <ProvideContext>

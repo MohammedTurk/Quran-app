@@ -1,6 +1,45 @@
 .fav-div {
   border-radius: 15px;
+  background-image: linear-gradient(
+      180deg,
+      rgba(51, 51, 51, 0.6),
+      rgba(51, 51, 51, 0.7)
+    ),
+    url(../../img/favbg.bfd2f013.jpg) !important;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
 }
+
 .fav-section {
   padding-top: 72px !important;
+}
+.surra-player {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+.surra-player i {
+  font-size: 29px;
+}
+.title-fav {
+  border-right: 2px solid #00b06e;
+  padding-right: 10px !important;
+  color: #fff;
+}
+.tools i {
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+}
+.fav-item {
+  margin-bottom: 10px;
+}
+.alert-message {
+  color: #ffffff !important;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  font-size: 50px;
+  font-weight: bolder;
 }

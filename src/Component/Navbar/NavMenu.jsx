@@ -13,13 +13,13 @@ function NavMenu(props) {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/tv">
-              الاذاعة
+            <NavLink className="nav-link" to="/ts">
+              التفسير
             </NavLink>
           </li>
 
           <li className="nav-item">
-            <NavLink className="nav-link " to="/tc">
+            <NavLink className="nav-link " to="/ft">
               حصن المسلم
             </NavLink>
           </li>

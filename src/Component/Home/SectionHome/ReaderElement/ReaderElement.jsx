@@ -1,35 +1,25 @@
-import React, { useEffect, useState, useContext } from "react";
-import UserContext, { ProvideConsumer } from "../../../Context";
-import Suars from "./Suars";
-import Audio from "./Audio";
-import menu from "../../../../menu.svg";
-import menu2 from "../../../../menu2.svg";
+import React, { useEffect, useState } from "react";
+import Suars from "./Surras/Suars";
+import SkeletonSurras from "../../../Skeleton/Skeletons/SkeletonSurra/SkeletonSurras";
+import axios from "axios";
 
-function ReaderElement({ item }) {
-  const TheContext = useContext(UserContext);
-  useEffect(() => {
-    const TheReader = TheContext.reader;
-    TheContext.playSurra(TheReader.surasData[0]);
+function ReaderElement({ match }) {
+  const [reader, setReader] = useState({});
+  useEffect(async () => {
+    const { id } = match.params;
+    const { data } = await axios.get(
+      `https://qurani-api.herokuapp.com/api/reciters/${id}`
+    );
+    setReader(data);
   }, []);
   return (
-    <div className="ml-4   py-md-5 my-md-5 ">
-      <div className="col-md-9 col-12 order-1 order-md-0 mt-4  ml-2 row readers-menu ml-auto mr-3">
-        <h3 className="col-md-9 text-right">
-          {item.name} - {item.rewaya}
-        </h3>
-        <div className="tools col-md-3 d-none d-md-flex justify-content-end align-items-center pl-4">
-          <span
-            className="pr-3 order-1"
-            onClick={() => TheContext.setOrder(true)}
-          >
-            <img src={menu} alt="" />
-          </span>
-          <span className="order-0" onClick={() => TheContext.setOrder(false)}>
-            <img src={menu2} alt="" />
-          </span>
-        </div>
-        <Suars item={item} />
-        <Audio />
+    <div className="py-lg-5 my-lg-5">
+      <div className="col-lg-9 col-12 order-1 order-md-0">
+        {Object.keys(reader).length !== 0 ? (
+          <Suars item={reader} />
+        ) : (
+          <SkeletonSurras />
+        )}
       </div>
     </div>
   );

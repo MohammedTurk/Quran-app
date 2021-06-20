@@ -9,15 +9,19 @@ class ProvideContext extends Component {
   state = {
     allReaders: [],
     Theme: "light",
-    reader: {},
     surra: "",
     activeSurra: {},
     order: true,
     favArray: [],
     searchValue: "",
-    mainReaders: [],
-    selectValue: "",
+    mainReaders: null,
+    selectedValue: "",
     rewayaReaders: [],
+    fortItemText: {},
+    fortText: {},
+    fortAudio: "",
+    tafseerSurra: {},
+    tafseerIndex: "",
   };
 
   async componentDidMount() {
@@ -30,6 +34,7 @@ class ProvideContext extends Component {
     });
     this.setState({
       allReaders: TheData,
+      mainReaders: TheData,
     });
   }
 
@@ -43,17 +48,6 @@ class ProvideContext extends Component {
     this.setState({
       Theme: "dark",
     });
-  };
-
-  readerInfo = (item) => {
-    const newReader = {};
-    axios
-      .get(`https://qurani-api.herokuapp.com/api/reciters/${item.id}`)
-      .then((item) =>
-        this.setState({
-          reader: { ...item.data },
-        })
-      );
   };
 
   changeReader = (reader) => {
@@ -78,12 +72,9 @@ class ProvideContext extends Component {
   addToFav = (item) => {
     item.inFav = !item.inFav;
     if (item.inFav === true) {
-      this.setState(
-        {
-          favArray: [...this.state.favArray, item],
-        },
-        () => console.log(this.state.favArray)
-      );
+      this.setState({
+        favArray: [...this.state.favArray, item],
+      });
     } else {
       const newArr = this.state.favArray.filter((i) => i.id !== item.id);
       this.setState({
@@ -106,10 +97,43 @@ class ProvideContext extends Component {
     const mainReaders = Readers.filter((f) => {
       return f.name.indexOf(this.state.searchValue) !== -1;
     });
+    if (mainReaders.length === 0) {
+      this.setState({
+        mainReaders: Readers,
+      });
+    } else {
+      this.setState({
+        mainReaders,
+      });
+    }
+  };
+
+  handleSelectedValue = (item) => {
+    this.setState({
+      selectedValue: item,
+    });
+    const Readers = this.state.allReaders;
+    let mainReaders;
+    if (item === "الكل") {
+      mainReaders = this.state.allReaders;
+    } else {
+      mainReaders = Readers.filter((f) => {
+        return f.rewaya === item;
+      });
+    }
+
     this.setState({
       mainReaders,
     });
   };
+
+  setFortItem = (item) => {
+    const audioFort = item.Audio_URL;
+    this.setState({
+      surra: audioFort,
+    });
+  };
+
   render() {
     return (
       <UserContext.Provider
@@ -123,6 +147,8 @@ class ProvideContext extends Component {
           setOrder: this.setOrder,
           addToFav: this.addToFav,
           handleSearch: this.handleSearch,
+          handleSelectedValue: this.handleSelectedValue,
+          setFortItem: this.setFortItem,
         }}
       >
         <ThemeProvider

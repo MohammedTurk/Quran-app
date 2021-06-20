@@ -33,10 +33,6 @@ export default Navbar;
 
 const BurgerButton = styled.button`
   padding: 10px;
-  // font-size: 20px;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  // color: white;
-  // background-color: #ffa69e;
-  // background-image: linear-gradient(315deg, #ffa69e 0%, #5d4954 74%);
 `;

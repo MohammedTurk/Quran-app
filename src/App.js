@@ -16,13 +16,7 @@ import SurraTafseerData from "./Component/Tafseer/SurraTafseerData";
 function App(props) {
   const TheContext = useContext(UserContext);
   const pathTafsserItem = `${TheContext.tafseerIndex}`;
-  // const [Loading, setLoading] = useState(false);
-  // useEffect(() => {
-  //   setLoading(true);
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, 8000);
-  // }, []);
+
   return (
     <div>
       <Navbar />

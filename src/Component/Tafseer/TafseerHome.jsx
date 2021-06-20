@@ -8,7 +8,9 @@ function TafseerHome(props) {
   const [allSurrasTs, setallSurrasTs] = useState([]);
   const [searchTafseer, setSearchTafseer] = useState([]);
   useEffect(async () => {
-    const { data } = await axios.get("http://api.quran-tafseer.com/quran/");
+    const { data } = await axios.get(
+      "https://cors-anywhere.herokuapp.com/http://api.quran-tafseer.com/quran/"
+    );
     setallSurrasTs(data);
   }, []);
   const handleSearch = (value) => {

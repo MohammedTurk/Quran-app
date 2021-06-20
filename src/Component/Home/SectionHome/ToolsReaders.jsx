@@ -9,10 +9,6 @@ function ToolsReaders(props) {
   const [Active, setActive] = useState(false);
   const [ValueRewaya, setValueRewaya] = useState("");
 
-  // useEffect(() => {
-  //   console.log(ValueRewaya.item);
-  // }, [ValueRewaya]);
-
   const handleActive = () => {
     setActive(!Active);
   };

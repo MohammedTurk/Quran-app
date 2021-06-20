@@ -8,7 +8,7 @@ function ReaderElement({ match }) {
   useEffect(async () => {
     const { id } = match.params;
     const { data } = await axios.get(
-      `http://qurani-api.herokuapp.com/api/reciters/${id}`
+      `https://qurani-api.herokuapp.com/api/reciters/${id}`
     );
     setReader(data);
   }, []);

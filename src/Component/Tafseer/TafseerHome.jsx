@@ -22,6 +22,7 @@ function TafseerHome(props) {
       <div className="tafseer-div ">
         <div className="tafseer-head mb-3 row m-0">
           <div className="title text-right  col-6 ">
+            <h2>ddd</h2>
             <h2>تفسير القرآن الكريم.</h2>
           </div>
           <div className="tafseer-search col-6 d-flex align-items-center justify-content-end">
